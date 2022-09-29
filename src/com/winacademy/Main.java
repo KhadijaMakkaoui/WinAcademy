@@ -23,7 +23,7 @@ public class Main {
             try {
                 option = scanner.nextInt();
                 switch (option){
-                    case 1: System.out.println("hello"); break;
+                    case 1: User.crudLoop(); break;
                     case 2: break;
                     case 3: break;
                     case 4: break;
