@@ -11,11 +11,10 @@ public class Main {
     public static void main(String[] args) {
         String[] Options={"------Main menu-------",
                 "1-College Management",
-            "2-Users Management",
+            "2-Admin Management",
             "3-Departement Management",
             "4-Etudiants Management",
             "5-Enseignants Management",
-                "6-Creer ou Afficher les roles",
             "0-Exit"
     };
         Scanner scanner=new Scanner(System.in);
@@ -28,10 +27,9 @@ public class Main {
                 switch (option){
                     case 1: College.collegeMenu(); break;
                     case 2: User.UserMenu(); break;
-                    case 3: break;
+                    case 3: Departement.departementMenu()break;
                     case 4: Etudiant.EtudiantMenu();break;
                     case 5: Enseignant.EnseignatMenu();break;
-                    case 6: break;
                     case 0: scanner.close();exit(0);
                 }
             }

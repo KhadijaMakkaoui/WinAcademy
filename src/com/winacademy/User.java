@@ -44,7 +44,7 @@ public class User {
             switch (ch) {
                 case 1:
                     System.out.println();
-                    insertUser(String.valueOf(Role.ADMIN));
+                    insertUser((Role.ADMIN).toString());
                     System.out.println();
                     break;
                 case 2:
