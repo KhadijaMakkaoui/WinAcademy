@@ -60,6 +60,7 @@ public class User {
                     System.out.println();
                     System.out.println("Donner id du user à modifier:");
                     int id=scanner.nextInt();
+                    scanner.nextLine();
                     update(id,scanner);
                     System.out.println();
                     break;
@@ -111,7 +112,7 @@ public class User {
         if (findById(id)!=null) {
             User u = findById(id);
             System.out.println("Entrer le nouveau mail");
-            u.nom= scanner.nextLine();
+            u.mail= scanner.nextLine();
             System.out.println("Entrer le nouveau passwor");
             u.password= scanner.nextLine();
 
@@ -121,10 +122,18 @@ public class User {
             System.out.println("User n'existe pas");
         }
     }
+
     @Override
     public String toString() {
-        return "Id:"+this.id+" -Full Name: "+this.nom+" "+this.prenom;
-
+        return "User{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", tel='" + tel + '\'' +
+                ", mail='" + mail + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }
 
