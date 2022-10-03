@@ -13,7 +13,7 @@ public class Main {
                 "1-College Management",
             "2-Users Management",
             "3-Departement Management",
-            "4-Salle Management",
+            "4-Etudiants Management",
             "5-Matieres Management",
                 "6-Creer ou Afficher les roles",
             "0-Exit"
@@ -29,9 +29,9 @@ public class Main {
                     case 1: College.collegeMenu(); break;
                     case 2: User.UserMenu(); break;
                     case 3: break;
-                    case 4: break;
+                    case 4: Etudiant.EtudiantMenu();break;
                     case 5: break;
-                    case 6: Role.RoleMenu();break;
+                    case 6: break;
                     case 0: scanner.close();exit(0);
                 }
             }
