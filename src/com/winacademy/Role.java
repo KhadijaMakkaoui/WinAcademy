@@ -1,2 +1,7 @@
-package com.winacademy;public enum Role {
+package com.winacademy;
+
+public enum Role {
+    ADMIN,
+    ETUDIANT,
+    PROFESSEUR
 }
