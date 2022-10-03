@@ -14,7 +14,7 @@ public class Main {
             "2-Users Management",
             "3-Departement Management",
             "4-Etudiants Management",
-            "5-Matieres Management",
+            "5-Enseignants Management",
                 "6-Creer ou Afficher les roles",
             "0-Exit"
     };
@@ -30,7 +30,7 @@ public class Main {
                     case 2: User.UserMenu(); break;
                     case 3: break;
                     case 4: Etudiant.EtudiantMenu();break;
-                    case 5: break;
+                    case 5: Enseignant.EnseignatMenu();break;
                     case 6: break;
                     case 0: scanner.close();exit(0);
                 }
