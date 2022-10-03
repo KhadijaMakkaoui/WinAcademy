@@ -23,12 +23,12 @@ public class User {
 
         }
 
-        public static void crudLoop() {
+        public static void UserMenu() {
         Scanner s = new Scanner(System.in);
         int ch = 0;
         do {
             System.out.println("1.INSERT");
-            System.out.println("2.DISPLAY");
+            System.out.println("2.DISPLAY ALL");
             System.out.println("3.SEARCH");
             System.out.println("4.DELETE");
             System.out.println("5.UPDATE");

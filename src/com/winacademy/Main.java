@@ -9,27 +9,30 @@ import static java.lang.System.exit;
 public class Main {
 
     public static void main(String[] args) {
-        String[] Options={"1-College Management",
+        String[] Options={"------Main menu-------",
+                "1-College Management",
             "2-Users Management",
-            "3-Roles Management",
+            "3-Departement Management",
             "4-Salle Management",
             "5-Matieres Management",
-            "6-Exit"
+                "6-Creer ou Afficher les roles",
+            "0-Exit"
     };
         Scanner scanner=new Scanner(System.in);
         int option=1;
-        while (option!=6){
+        while (option!=0){
             Menu.printMenu(Options);
             try {
                 option = scanner.nextInt();
                 scanner.nextLine();
                 switch (option){
-                    case 1: User.crudLoop(); break;
-                    case 2: break;
+                    case 1:  break;
+                    case 2: User.UserMenu(); break;
                     case 3: break;
                     case 4: break;
                     case 5: break;
-                    case 6: exit(0);
+                    case 6: Role.RoleMenu();break;
+                    case 0: scanner.close();exit(0);
                 }
             }
             catch (InputMismatchException ex){
