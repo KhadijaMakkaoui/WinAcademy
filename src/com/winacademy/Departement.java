@@ -10,7 +10,7 @@ public class Departement {
     private int departement_id;
     private String nom;
     private int id_responsable=0;
-    private static List<Departement> departements=new ArrayList<>();
+    //private static List<Departement> departements=new ArrayList<>();
 
 
     public Departement(int departement_id, String nom,int id_responsable) {
@@ -63,7 +63,6 @@ public class Departement {
                     System.out.println();
                     break;
                 case 0:
-                    exit(0);
                     break;
             }
         } while (ch != 0);
@@ -76,12 +75,12 @@ public class Departement {
         System.out.println("Entrer le nom du departement :");
         String nom = scanner.nextLine();
 
-        departements.add(new Departement(id, nom,0));
+        College.departements.add(new Departement(id, nom,0));
     }
 
     public static void displayList() {
         System.out.println("------------------");
-        departements.stream().forEach(dep->System.out.println(dep));
+        College.departements.stream().forEach(dep->System.out.println(dep));
         System.out.println("------------------");
 
     }

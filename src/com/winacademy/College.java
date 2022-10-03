@@ -9,7 +9,7 @@ public class College {
     private String college_Name;
     private String siteInternet;
     private static List<College> colleges=new ArrayList<>();
-    private List<Departement>departements=new ArrayList<>();
+    public static List<Departement>departements=new ArrayList<>();
     public College(int college_id, String college_Name, String siteInternet) {
         this.college_id = college_id;
         this.college_Name = college_Name;
