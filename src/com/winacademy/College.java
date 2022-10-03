@@ -1,6 +1,18 @@
 package com.winacademy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class College {
+    private int college_id;
+    private int college_Name;
+    private String siteInternet;
+    private List<Departement>departements=new ArrayList<>();
+    public College(int college_id, int college_Name, String siteInternet) {
+        this.college_id = college_id;
+        this.college_Name = college_Name;
+        this.siteInternet = siteInternet;
+    }
     public int getCollege_id() {
         return college_id;
     }
@@ -25,13 +37,7 @@ public class College {
         this.siteInternet = siteInternet;
     }
 
-    private int college_id;
-    private int college_Name;
-    private String siteInternet;
 
-    public College(int college_id, int college_Name, String siteInternet) {
-        this.college_id = college_id;
-        this.college_Name = college_Name;
-        this.siteInternet = siteInternet;
-    }
+
+
 }
