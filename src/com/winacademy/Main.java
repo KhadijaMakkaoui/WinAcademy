@@ -22,6 +22,7 @@ public class Main {
             Menu.printMenu(Options);
             try {
                 option = scanner.nextInt();
+                scanner.nextLine();
                 switch (option){
                     case 1: User.crudLoop(); break;
                     case 2: break;
@@ -32,7 +33,7 @@ public class Main {
                 }
             }
             catch (InputMismatchException ex){
-                System.out.println("Please enter an integer value between 1 and " + Options.length);
+                System.out.println("Veuillez entrer un nombre entier entre 1 et " + Options.length);
                 scanner.next();
             }
             catch (Exception ex){

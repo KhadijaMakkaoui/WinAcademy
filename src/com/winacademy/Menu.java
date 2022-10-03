@@ -9,7 +9,7 @@ public class Menu {
         for (String option : options){
             System.out.println(option);
         }
-        System.out.print("Choose your option : ");
+        System.out.print("Choisir votre option : ");
     }
 
 

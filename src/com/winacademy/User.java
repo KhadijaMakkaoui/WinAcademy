@@ -87,12 +87,11 @@ public class User {
         String u_password =password.nextLine();
         System.out.println("Enter User role id :");
         int u_role = role.nextInt();
+        role.nextLine();
         al.add(new User(u_id, lname, fname, u_tel, u_mail,u_password, u_role));
     }
 
     public static void displayList() {
-            String s="-";
-       // s.repeat(20);
         System.out.println("------------------");
         Iterator<User> itr = al.iterator();
         while (itr.hasNext()) {
@@ -101,10 +100,13 @@ public class User {
         }
         System.out.println("------------------");
 
-        // "-".repeat(20);
     }
 
-   /* public static void searchList() {
+    @Override
+    public String toString() {
+        return "Id:"+this.id+" -Full Name: "+this.nom+" "+this.prenom;
+    }
+    /* public static void searchList() {
         boolean found = false;
         Scanner sId = new Scanner(System.in);
         System.out.println("Enter Employee Id to Search:");
