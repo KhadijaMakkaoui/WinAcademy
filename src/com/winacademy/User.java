@@ -11,9 +11,14 @@ public class User {
 
 
         protected int id;
-        protected String nom,prenom,tel,mail,password;
-        protected int role;
-        public User(int id,String nom,String prenom,String tel,String mail,String password,int role) {
+    protected String nom;
+    protected String prenom;
+    protected String tel;
+    protected String mail;
+    protected String password;
+
+        protected String role;
+        public User(int id,String nom,String prenom,String tel,String mail,String password,String role) {
             this.id=id;
             this.nom=nom;
             this.prenom=prenom;
@@ -39,7 +44,7 @@ public class User {
             switch (ch) {
                 case 1:
                     System.out.println();
-                    insertUser();
+                    insertUser(String.valueOf(Role.ADMIN));
                     System.out.println();
                     break;
                 case 2:
@@ -61,7 +66,7 @@ public class User {
             }
         } while (ch != 0);
     }
-    public static void insertUser() {
+    public static void insertUser(String role) {
         System.out.println("Enter User Id :");
         int u_id = scanner.nextInt();
         scanner.nextLine();
@@ -75,10 +80,8 @@ public class User {
         String u_mail= scanner.nextLine();
         System.out.println("Enter User Password :");
         String u_password =scanner.nextLine();
-        System.out.println("Enter User role id :");
-        int u_role = scanner.nextInt();
         scanner.nextLine();
-        users.add(new User(u_id, lname, fname, u_tel, u_mail,u_password, u_role));
+        users.add(new User(u_id, lname, fname, u_tel, u_mail,u_password, role));
     }
 
     public static void displayList() {
