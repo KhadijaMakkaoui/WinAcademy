@@ -24,4 +24,5 @@ public class Departement {
     public void setNom(int nom) {
         this.nom = nom;
     }
+
 }

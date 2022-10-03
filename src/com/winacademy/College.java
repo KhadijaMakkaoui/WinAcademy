@@ -1,7 +1,6 @@
 package com.winacademy;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -55,7 +54,7 @@ public class College {
             switch (ch) {
                 case 1:
                     System.out.println();
-                    insertList();
+                    insertCollege();
                     System.out.println();
                     break;
                 case 2:
@@ -76,7 +75,7 @@ public class College {
             }
         } while (ch != 0);
     }
-    public static void insertList() {
+    public static void insertCollege() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Entrer Id :");
         int id = scanner.nextInt();
