@@ -36,7 +36,7 @@ public class User {
             System.out.println("1.INSERT");
             System.out.println("2.DISPLAY ALL");
             System.out.println("3.SEARCH");
-            System.out.println("4.UPDATE");
+            System.out.println("4.UPDATE Email and Password");
             System.out.println("0.EXIT");
             System.out.println("Enter Your Choice : ");
             ch = s.nextInt();
@@ -67,7 +67,7 @@ public class User {
             }
         } while (ch != 0);
     }
-    public static void insertUser(String role) {
+    public static User insertUser(String role) {
         System.out.println("Enter User Id :");
         int u_id = scanner.nextInt();
         scanner.nextLine();
@@ -83,7 +83,8 @@ public class User {
         String u_password =scanner.nextLine();
         scanner.nextLine();
         users.add(new User(u_id, lname, fname, u_tel, u_mail,u_password, role));
-    }
+        return users.get(users.size()-1);
+        }
 
     public static void displayList() {
         System.out.println("------------------");
