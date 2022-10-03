@@ -1,4 +1,2 @@
-package com.winacademy;
-
-public class Evaluation {
+package com.winacademy;public enum Evaluation {
 }

@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class User {
-    static List<User> al = new ArrayList<>();
+    static List<User> users = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
 
 
         protected int id;
@@ -48,46 +49,41 @@ public class User {
                     break;
                 case 3:
                     System.out.println();
-                    //searchList();
                     System.out.println();
                     break;
                 case 4:
                     System.out.println();
-                   // updateList();
+                    System.out.println("Donner id du user à modifier:");
+                    int id=scanner.nextInt();
+                    update(id,scanner);
                     System.out.println();
                     break;
             }
         } while (ch != 0);
     }
     public static void insertUser() {
-        Scanner id = new Scanner(System.in);
-        Scanner nom = new Scanner(System.in);
-        Scanner prenom = new Scanner(System.in);
-        Scanner tel = new Scanner(System.in);
-        Scanner mail = new Scanner(System.in);
-        Scanner password = new Scanner(System.in);
-        Scanner role = new Scanner(System.in);
         System.out.println("Enter User Id :");
-        int u_id = id.nextInt();
+        int u_id = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter User first Name :");
-        String fname = prenom.nextLine();
+        String fname = scanner.nextLine();
         System.out.println("Enter User last Name :");
-        String lname = nom.nextLine();
+        String lname = scanner.nextLine();
         System.out.println("Enter User tel :");
-        String u_tel = tel.nextLine();
+        String u_tel = scanner.nextLine();
         System.out.println("Enter User mail :");
-        String u_mail= mail.nextLine();
+        String u_mail= scanner.nextLine();
         System.out.println("Enter User Password :");
-        String u_password =password.nextLine();
+        String u_password =scanner.nextLine();
         System.out.println("Enter User role id :");
-        int u_role = role.nextInt();
-        role.nextLine();
-        al.add(new User(u_id, lname, fname, u_tel, u_mail,u_password, u_role));
+        int u_role = scanner.nextInt();
+        scanner.nextLine();
+        users.add(new User(u_id, lname, fname, u_tel, u_mail,u_password, u_role));
     }
 
     public static void displayList() {
         System.out.println("------------------");
-        Iterator<User> itr = al.iterator();
+        Iterator<User> itr = users.iterator();
         while (itr.hasNext()) {
             User u = itr.next();
             System.out.println(u);
@@ -96,58 +92,37 @@ public class User {
 
     }
 
+
+    public static User findById(int idToFind)
+    {
+        for (User u : users) {
+            if (u.id== idToFind) {
+                return u;
+            }
+        }
+        return null;
+    }
+    public static void update(int id, Scanner scanner)
+    {
+
+        if (findById(id)!=null) {
+            User u = findById(id);
+            System.out.println("Entrer le nouveau mail");
+            u.nom= scanner.nextLine();
+            System.out.println("Entrer le nouveau passwor");
+            u.password= scanner.nextLine();
+
+            System.out.println("Modifier avec succes");
+        }
+        else {
+            System.out.println("User n'existe pas");
+        }
+    }
     @Override
     public String toString() {
         return "Id:"+this.id+" -Full Name: "+this.nom+" "+this.prenom;
-    }
-    /* public static void searchList() {
-        boolean found = false;
-        Scanner sId = new Scanner(System.in);
-        System.out.println("Enter Employee Id to Search:");
-        int studentId = sId.nextInt();
-        "-".repeat(20);
-        Iterator<StudentDto> itr = al.iterator();
-        while (itr.hasNext()) {
-            StudentDto student = itr.next();
-            if (student.getStudentId() == studentId) {
-                System.out.println("Record Found");
-                System.out.println(student);
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("Record Not Found");
-        }
-        "-".repeat(20);
-    }
 
-    public static void updateList() {
-        boolean found = false;
-        Scanner sId = new Scanner(System.in);
-        Scanner sName = new Scanner(System.in);
-        Scanner sFaculty = new Scanner(System.in);
-        System.out.println("Enter Employee Id to Update:");
-        int studentId = sId.nextInt();
-        "-".repeat(20);
-        ListIterator<StudentDto> itr = al.listIterator();
-        while (itr.hasNext()) {
-            StudentDto student = itr.next();
-            if (student.getStudentId() == studentId) {
-                System.out.println("Enter new Student Name :");
-                String studentName = sName.nextLine();
-                System.out.println("Enter new Student Faculty :");
-                String studentFaculty = sFaculty.nextLine();
-                itr.set(new StudentDto(studentId, studentName, studentFaculty));
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("Record Not Found");
-        } else {
-            System.out.println("Record Updated Successfully");
-        }
-        "-".repeat(20);
-    }*/
+    }
 }
 
 

@@ -1,4 +1,2 @@
-package com.winacademy;
-
-public class Matiere {
+package com.winacademy;public enum Matiere {
 }

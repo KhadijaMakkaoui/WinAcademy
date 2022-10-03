@@ -1,4 +1,2 @@
-package com.winacademy;
-
-public class Salle {
+package com.winacademy;public enum Salle {
 }
