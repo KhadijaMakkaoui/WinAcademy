@@ -1,6 +1,5 @@
 package com.winacademy;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.*;
 
 public class Etudiant extends User{
