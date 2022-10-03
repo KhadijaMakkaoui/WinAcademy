@@ -30,8 +30,7 @@ public class User {
             System.out.println("1.INSERT");
             System.out.println("2.DISPLAY ALL");
             System.out.println("3.SEARCH");
-            System.out.println("4.DELETE");
-            System.out.println("5.UPDATE");
+            System.out.println("4.UPDATE");
             System.out.println("0.EXIT");
             System.out.println("Enter Your Choice : ");
             ch = s.nextInt();
@@ -39,7 +38,7 @@ public class User {
             switch (ch) {
                 case 1:
                     System.out.println();
-                    insertList();
+                    insertUser();
                     System.out.println();
                     break;
                 case 2:
@@ -54,18 +53,13 @@ public class User {
                     break;
                 case 4:
                     System.out.println();
-                   // deleteList();
-                    System.out.println();
-                    break;
-                case 5:
-                    System.out.println();
                    // updateList();
                     System.out.println();
                     break;
             }
         } while (ch != 0);
     }
-    public static void insertList() {
+    public static void insertUser() {
         Scanner id = new Scanner(System.in);
         Scanner nom = new Scanner(System.in);
         Scanner prenom = new Scanner(System.in);
@@ -123,28 +117,6 @@ public class User {
         }
         if (!found) {
             System.out.println("Record Not Found");
-        }
-        "-".repeat(20);
-    }
-
-    public static void deleteList() {
-        boolean found = false;
-        Scanner sId = new Scanner(System.in);
-        System.out.println("Enter Employee Id to Delete:");
-        int studentId = sId.nextInt();
-        "-".repeat(20);
-        Iterator<StudentDto> itr = al.iterator();
-        while (itr.hasNext()) {
-            StudentDto student = itr.next();
-            if (student.getStudentId() == studentId) {
-                itr.remove();
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("Record Not Found");
-        } else {
-            System.out.println("Record Found and Deleted Successfully");
         }
         "-".repeat(20);
     }

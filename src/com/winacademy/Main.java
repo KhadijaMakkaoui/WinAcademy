@@ -26,7 +26,7 @@ public class Main {
                 option = scanner.nextInt();
                 scanner.nextLine();
                 switch (option){
-                    case 1:  break;
+                    case 1: College.collegeMenu(); break;
                     case 2: User.UserMenu(); break;
                     case 3: break;
                     case 4: break;
