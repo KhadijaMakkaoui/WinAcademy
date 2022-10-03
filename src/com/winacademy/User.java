@@ -29,7 +29,11 @@ public class User {
 
         }
 
-        public static void UserMenu() {
+    public User() {
+
+    }
+
+    public static void UserMenu() {
         Scanner s = new Scanner(System.in);
         int ch = 0;
         do {

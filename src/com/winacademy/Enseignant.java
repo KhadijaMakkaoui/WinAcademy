@@ -17,6 +17,11 @@ public class Enseignant extends User{
         this.dateFonction = dateFonction;
         this.matiere = matiere;
     }
+
+    public Enseignant() {
+        super();
+    }
+
     public static void EnseignatMenu() {
         Scanner s = new Scanner(System.in);
         int ch = 0;

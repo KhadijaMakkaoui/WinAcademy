@@ -9,14 +9,15 @@ import static java.lang.System.exit;
 public class Departement {
     private int departement_id;
     private String nom;
-    private int id_responsable=0;
+    private Enseignant responsable;
     //private static List<Departement> departements=new ArrayList<>();
 
 
-    public Departement(int departement_id, String nom,int id_responsable) {
+    public Departement(int departement_id, String nom,int responsable_id) {
         this.departement_id = departement_id;
         this.nom = nom;
-        this.id_responsable=id_responsable;
+        this.responsable=new Enseignant();
+        responsable.id=responsable_id;
     }
 
     public int getDepartement_id() {
@@ -90,7 +91,7 @@ public class Departement {
         return "Departement{" +
                 "departement_id=" + departement_id +
                 ", nom='" + nom + '\'' +
-                ", id_responsable=" + id_responsable +
+                ", id_responsable=" + //id_responsable +
                 '}';
     }
 }
