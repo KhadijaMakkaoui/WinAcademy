@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class User {
     static List<User> users = new ArrayList<>();
@@ -37,10 +39,10 @@ public class User {
         Scanner s = new Scanner(System.in);
         int ch = 0;
         do {
-            System.out.println("1.INSERT");
-            System.out.println("2.DISPLAY ALL");
-            System.out.println("3.SEARCH");
-            System.out.println("4.UPDATE Email and Password");
+            System.out.println("1.INSERT ADMIN");
+            System.out.println("2.DISPLAY ALL USERS");
+            System.out.println("3.UPDATE Email and Password");
+            System.out.println("4.SEARCH BY ROLE");
             System.out.println("0.EXIT");
             System.out.println("Enter Your Choice : ");
             ch = s.nextInt();
@@ -58,16 +60,19 @@ public class User {
                     break;
                 case 3:
                     System.out.println();
-                    System.out.println();
-                    break;
-                case 4:
-                    System.out.println();
                     System.out.println("Donner id du user à modifier:");
                     int id=scanner.nextInt();
                     scanner.nextLine();
                     update(id,scanner);
                     System.out.println();
                     break;
+                    case 4:
+                    System.out.println();
+
+                        searchByRole();
+                    System.out.println();
+                    break;
+
             }
         } while (ch != 0);
     }
@@ -126,6 +131,22 @@ public class User {
         else {
             System.out.println("User n'existe pas");
         }
+    }
+    public static void searchByRole() {
+            String role_search;
+        List<String> roles = Stream.of(Role.values())
+                .map(r -> r.name())
+                .collect(Collectors.toList());
+
+        do {
+            System.out.println("Donner le role:");
+            role_search = scanner.nextLine();
+
+        } while (!roles.contains(role_search));
+
+        String finalRole_search = role_search;
+        users.stream().filter(u -> finalRole_search.equals(u.role)).forEach(u -> System.out.println(u));
+
     }
 
     @Override
